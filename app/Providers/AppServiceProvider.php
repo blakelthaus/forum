@@ -26,6 +26,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        \View::share('channels', Channel::all());
+        //\View::share('channels', Channel::all()); //this would work if we had a static/production db
+        \View::composer('*', function($view) {
+            $view->with('channels', Channel::all());
+        });  //this is used for testing purposes since we are running database migrations every test it doesn't require the data until the view is loaded.
+
     }
 }
