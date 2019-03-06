@@ -15,19 +15,19 @@ class ParticipatesInForumTest extends TestCase
     {
         $this->expectException('Illuminate\Database\Eloquent\ModelNotFoundException');
 
-        $this->post('/threads/1/replies', []);
+        $this->post('/threads/some-channel/1/replies', []);
     }
 
     /** @test */
     function test_an_authenticated_user_may_participate_in_forum_thread()
     {
-        $user = factory('App\User')->create();
-        $this->be($user = factory('App\User')->create());
+        $this->signIn();
+        $thread = create('App\Thread');
+        $reply = create('App\Reply', ['thread_id' => $thread->id]);
+        dd($thread->path() . '/replies');
+        $this->post($thread->path() . '/replies', $reply->toArray());
 
-        $thread = factory('App\Thread')->create();
-        $reply = factory('App\Reply')->make();
-
-        $this->post($thread->path(). '/replies', $reply->toArray());
-        $this->get($thread->path())->assertSee($reply->body);
+        $this->get($thread->path())
+            ->assertSee($reply->body);
     }
 }

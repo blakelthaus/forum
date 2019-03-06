@@ -32,7 +32,7 @@ class CreateThreadsTest extends TestCase
         //given we have a signed in user
         $this->signIn();
         //when we hit the endpoint to create a new thread
-        $thread = make('App\Thread');
+        $thread = create('App\Thread');
         $this->post('/threads', $thread->toArray());
         //then we visit the thread page
         $this->get($thread->path())

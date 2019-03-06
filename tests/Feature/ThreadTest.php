@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 
 
-class ThreadsTest extends TestCase
+class ThreadTest extends TestCase
 {
     protected $thread;
     use DatabaseMigrations;
@@ -19,6 +19,13 @@ class ThreadsTest extends TestCase
         parent::setUp();
 
         $this->thread = factory('App\Thread')->create();
+    }
+
+    /** @test */
+    function test_a_thread_can_make_a_string_path()
+    {
+        $thread = create('App\Thread');
+        $this->assertEquals('/threads/' . $thread->channel->slug . '/' . $thread->id, $thread->path());
     }
 
     /** @test */
@@ -49,7 +56,7 @@ class ThreadsTest extends TestCase
     {
         $thread = create('App\Thread');
 
-        $this->assertInstanceOf('App\Channel', $thread);
+        $this->assertInstanceOf('App\Channel', $thread->channel);
     }
 
 }
