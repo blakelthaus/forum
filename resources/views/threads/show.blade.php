@@ -9,7 +9,7 @@
                         <a href="#">{{ $thread->creator->name }}</a> posted:
                         {{$thread->title}}
                     </div>
-                        <div class="panel-body">
+                        <div class="panel-body" style="margin: 10px; padding:10px;">
                             {{ $thread->body }}
                         </div>
                 </div>

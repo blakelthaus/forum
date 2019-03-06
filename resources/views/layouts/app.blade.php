@@ -36,11 +36,14 @@
                         <li style="margin:10px">
                             <a href="/threads">All Threads</a>
                         </li>
+                        <li style="margin:10px">
+                            <a href="/threads/create">New Thread</a>
+                        </li>
                         <li class="dropdown" style="margin:10px">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Channels <b
                                     class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                @foreach (App\Channel::all() as $channel)
+                                @foreach ($channels as $channel)
                                     <li><a href="/threads/{{ $channel->slug }}/">{{ $channel->name }}</a></li>
                                 @endforeach
                             </ul>
