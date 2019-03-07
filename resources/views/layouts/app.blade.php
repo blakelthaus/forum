@@ -38,11 +38,11 @@
                                     class="caret"></b></a>
                             <ul class="dropdown-menu" style="margin:10px">
                                 <li style="margin:10px">
-                                    <a href="/threads">All Threads</a>
+                                    <a href="/forum/threads">All Threads</a>
                                 </li>
                                 @if (auth()->check())
                                     <li>
-                                        <a href="/threads?by={{ auth()->user()->name }}"> My Threads</a>
+                                        <a href="/forum/threads?by={{ auth()->user()->name }}"> My Threads</a>
                                     </li>
                                 @endif
                             </ul>
@@ -50,14 +50,14 @@
 
 
                         <li style="margin:10px">
-                            <a href="/threads/create">New Thread</a>
+                            <a href="/forum/threads/create">New Thread</a>
                         </li>
                         <li class="dropdown" style="margin:10px">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Channels <b
                                     class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 @foreach ($channels as $channel)
-                                    <li><a href="/threads/{{ $channel->slug }}/">{{ $channel->name }}</a></li>
+                                    <li><a href="/forum/threads/{{ $channel->slug }}/">{{ $channel->name }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
