@@ -21,7 +21,7 @@ class ReadThreadsTest extends TestCase
     /**@test */
     public function test_a_user_can_view_all_threads()
     {
-        $this->get('/threads')->assertSee($this->thread->title);
+        $this->get('/forum/threads')->assertSee($this->thread->title);
     }
 
     /**@test */
@@ -44,7 +44,7 @@ class ReadThreadsTest extends TestCase
         $threadInChannel =create('App\Thread', ['channel_id' => $channel->id]);
         $threadNotInChannel = create('App\Thread');
 
-        $this->get('/threads/' .$channel->slug)
+        $this->get('forum/threads/' .$channel->slug)
             ->assertSee($threadInChannel->title)
             ->assertDontSee($threadNotInChannel->title);
     }
