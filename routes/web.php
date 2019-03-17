@@ -17,6 +17,7 @@ Route::group(['prefix' => 'forum'], function() {
 
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('threads', 'ThreadsController@index')->name('threads');
+
     Route::post('threads', 'ThreadsController@store')->name('saveThreads');
     Route::get('threads/create', 'ThreadsController@create')->name('createThread');
     Route::get('/threads/{channel}', 'ThreadsController@index')->name('channels');
@@ -24,9 +25,11 @@ Route::group(['prefix' => 'forum'], function() {
 
     Route::post('/threads/{channel}/{thread}/replies', 'RepliesController@store')->name('saveReply');
 
+    Auth::routes();
+
 });
 
 
-Auth::routes();
+
 
 
