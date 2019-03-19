@@ -53,9 +53,9 @@
                             <a href="/forum/threads/create">New Thread</a>
                         </li>
                         <li class="dropdown" style="margin:10px">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Channels <b
-                                    class="caret"></b></a>
-                            <ul class="dropdown-menu">
+                            <a href="#" class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown">Channels <b
+                                    class="caret" aria-haspopup="true" aria-expanded="false"></b></a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 @foreach ($channels as $channel)
                                     <li><a href="/forum/threads/{{ $channel->slug }}/">{{ $channel->name }}</a></li>
                                 @endforeach
