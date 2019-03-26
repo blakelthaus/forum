@@ -13,6 +13,7 @@
 
     <script>
         $(document).ready(function() {
+            console.log('hey it works');
             $('#summernote').summernote();
         });
     </script>
