@@ -12,5 +12,10 @@ class CheatSheetController extends Controller
 
     public function compile(Request $request) {
         dump($request);
+        dump($request->request->parameters);
+        dump($request->request->parameters['editordata']);
+        dump($request->parameters);
+        dump($request->parameters['editordata']);
+
     }
 }

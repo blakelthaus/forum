@@ -18,12 +18,6 @@
     <script>
         $(document).ready(function() {
             $('#summernote').summernote();
-
-            //
-            // $('#compile').on('click', function() {
-            //     var markupStr = $('#summernote').summernote('code');
-            //     console.log(markupStr);
-            // });
         });
     </script>
 
