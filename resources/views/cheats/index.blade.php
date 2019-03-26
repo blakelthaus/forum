@@ -12,11 +12,21 @@
         <textarea id="summernote" name="editordata"></textarea>
     </form>
 
-    <button type="submit" form="cheatContent">COMPILE</button>
+    <button type="submit" class="btn btn-primary" value="compile" id="compile">Compile</button>
 
     <script>
         $(document).ready(function() {
             $('#summernote').summernote();
+
+
+            $('#compile').on('click', function() {
+                var markupStr = $('#summernote').summernote('code');
+                console.log(markupStr);
+            });
         });
     </script>
+
+
+
+
 @endsection
