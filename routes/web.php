@@ -26,6 +26,7 @@ Route::group(['prefix' => 'forum'], function() {
     Route::post('/threads/{channel}/{thread}/replies', 'RepliesController@store')->name('saveReply');
 
     Route::get('/cheat-sheet', 'CheatSheetController@index')->name('cheatSheet');
+    Route::post('/cheat-sheet/compile', 'CheatSheetController@compile')->name('compile');
 
     Auth::routes();
 
