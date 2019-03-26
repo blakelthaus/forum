@@ -9,20 +9,21 @@
 
 
     <form method="post" action="{{ route('compile') }}" id="cheatContent">
+        {{ csrf_field() }}
         <textarea id="summernote" name="editordata"></textarea>
     </form>
 
-    <button type="submit" class="btn btn-primary" value="compile" id="compile">Compile</button>
+    <button type="submit" class="btn btn-primary" value="compile" id="compile" form="cheatContent">Compile</button>
 
     <script>
         $(document).ready(function() {
             $('#summernote').summernote();
 
-
-            $('#compile').on('click', function() {
-                var markupStr = $('#summernote').summernote('code');
-                console.log(markupStr);
-            });
+            //
+            // $('#compile').on('click', function() {
+            //     var markupStr = $('#summernote').summernote('code');
+            //     console.log(markupStr);
+            // });
         });
     </script>
 
