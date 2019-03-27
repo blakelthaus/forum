@@ -14,7 +14,7 @@ class CheatSheetController extends Controller
     }
 
     public function compile(Request $request) {
-        $html = '<html><body>' . $request->input('editordata') . '</body></html>';
+        $body = '<body>' . $request->input('editordata') . '</body>';
 
         $style = '<style>
                     body.* {
@@ -23,7 +23,7 @@ class CheatSheetController extends Controller
                     }
                 </style>';
 
-        $finalHtml = $style . $html;
+        $html = '<html>' . $style . $body . '</html>';
 
         $pdf = new Pdf(array(
             'no-outline',         // Make Chrome not complain
@@ -36,11 +36,12 @@ class CheatSheetController extends Controller
             'disable-smart-shrinking',
         ));
 
-        $pdf->addPage($finalHtml);
+        $pdf->addPage($html);
 
-        $pdf->saveAs('/storage/app/public/pdf/testFile.pdf');
-
-        Storage::download('testFile.pdf');
+        if (!$pdf->send()) {
+            $error = $pdf->getError();
+            echo $error;
+        }
 
         return view('cheat.compiled');
 
