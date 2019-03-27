@@ -43,7 +43,7 @@ class CheatSheetController extends Controller
             echo $error;
         }
 
-        return view('cheat.compiled');
+        return view('cheats.compiled');
 
     }
 }
