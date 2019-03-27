@@ -38,14 +38,12 @@ class CheatSheetController extends Controller
 
         $pdf->addPage($html);
 
-//        if (!$pdf->send()) {
-//            $error = $pdf->getError();
-//            echo $error;
-//        }
-//
-//        return view('cheats.compiled');
+        if (!$pdf->send()) {
+            $error = $pdf->getError();
+            echo $error;
+        }
 
-        return $pdf->send();
+        return view('cheats.compiled');
 
     }
 }
