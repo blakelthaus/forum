@@ -15,7 +15,7 @@ class ParticipatesInForumTest extends TestCase
     {
         $this->expectException('Illuminate\Database\Eloquent\ModelNotFoundException');
 
-        $this->post('/threads/some-channel/1/replies', []);
+        $this->post('/forum/threads/some-channel/1/replies', []);
     }
 
     /** @test */

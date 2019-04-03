@@ -16,33 +16,32 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-    {{--<!-- include libraries(jQuery, bootstrap) -->--}}
-    {{--<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">--}}
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>--}}
-    {{--<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>--}}
-
     <!-- include summernote css/js -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
 
     <!-- Scripts -->
     <script src="https://blakeborgholthaus.com/js/app.js" defer></script>
+
+    <style>
+        body {
+            padding-bottom: 100px;
+        }
+        .level {
+            display: flex;
+            align-items:center;
+        }
+        .flex {
+            flex: 1;
+        }
+    </style>
 </head>
 <body style="padding: 100px;">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="{{ url('/forum') }}">
+                    {{ config('app.name', 'Home') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -59,10 +58,13 @@
                                     <a href="/forum/threads">All Threads</a>
                                 </li>
                                 @if (auth()->check())
-                                    <li>
+                                    <li style="margin:10px">
                                         <a href="/forum/threads?by={{ auth()->user()->name }}"> My Threads</a>
                                     </li>
                                 @endif
+                                <li style="margin:10px">
+                                    <a href="/forum/threads?popular=1">Popular Threads</a>
+                                </li>
                             </ul>
                         </li>
 

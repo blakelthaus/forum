@@ -17,12 +17,12 @@ class CreateThreadsTest extends TestCase
         $this->withExceptionHandling();
 
         //can we view the create threads page?
-        $this->get('/threads/create')
-            ->assertRedirect('/login');
+        $this->get('/forum/threads/create')
+            ->assertRedirect('forum/login');
 
         //can we post to the threads create function?
-        $this->post('/threads')
-            ->assertRedirect('/login');
+        $this->post('/forum/threads')
+            ->assertRedirect('forum/login');
     }
 
     /**@test*/
@@ -33,7 +33,7 @@ class CreateThreadsTest extends TestCase
         $this->signIn();
         //when we hit the endpoint to create a new thread
         $thread = make('App\Thread');
-        $response = $this->post('/threads', $thread->toArray());
+        $response = $this->post('/forum/threads', $thread->toArray());
 
         //then we visit the thread page
         $this->get($response->headers->get('Location'))
@@ -74,7 +74,7 @@ class CreateThreadsTest extends TestCase
 
         $thread = make('App\Thread', $overides);
 
-        return $this->post('/threads', $thread->toArray());
+        return $this->post('/forum/threads', $thread->toArray());
 
     }
 }
