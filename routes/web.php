@@ -28,6 +28,8 @@ Route::group(['prefix' => 'forum'], function() {
     Route::get('/cheat-sheet', 'CheatSheetController@index')->name('cheatSheet');
     Route::post('/cheat-sheet/compile', 'CheatSheetController@compile')->name('compile');
 
+    Route::post('/replies/{reply}/favorites', 'FavoritesController@store')->name('favorite');
+
     Auth::routes();
 
 });

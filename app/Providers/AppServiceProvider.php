@@ -15,7 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if ($this->app->isLocal()) {
+            $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
+        }
     }
 
     /**
@@ -28,7 +30,10 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         //\View::share('channels', Channel::all()); //this would work if we had a static/production db
         \View::composer('*', function($view) {
-            $view->with('channels', Channel::all());
+            $channels = \Cache::rememberForever('channels', function () {
+                return Channel::all();
+            });
+            $view->with('channels', $channels);
         });  //this is used for testing purposes since we are running database migrations every test it doesn't require the data until the view is loaded.
 
     }
