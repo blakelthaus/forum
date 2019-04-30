@@ -4016,6 +4016,7 @@ return array(
     'Tests\\Unit\\ActivityTest' => $baseDir . '/tests/Feature/ActivityTest.php',
     'Tests\\Unit\\ExampleTest' => $baseDir . '/tests/Unit/ExampleTest.php',
     'Tests\\Unit\\FavoritesTest' => $baseDir . '/tests/Feature/FavoritesTest.php',
+    'Tests\\extends' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'TheSeer\\Tokenizer\\Exception' => $vendorDir . '/theseer/tokenizer/src/Exception.php',
     'TheSeer\\Tokenizer\\NamespaceUri' => $vendorDir . '/theseer/tokenizer/src/NamespaceUri.php',
