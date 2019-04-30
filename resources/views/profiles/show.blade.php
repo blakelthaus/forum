@@ -1,33 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="page-header">
-        <h1>
-            {{ $profileUser->name }}
-            <small>User since {{ $profileUser->created_at->diffForHumans() }}</small>
-        </h1>
-    </div>
-
-    @foreach ($threads as $thread)
-        <div class="card">
-            <div class="card-header">
-                <div class="level">
-                    <span class="flex">
-                        <a href="#">{{ $thread->creator->name }}</a> posted:
-                        {{$thread->title}}
-                    </span>
-                    <span>
-                        {{ $thread->created_at->diffForHumans() }}
-                    </span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="page-header">
+                    <h1>
+                        {{ $profileUser->name }}
+                        <small>User since {{ $profileUser->created_at->diffForHumans() }}</small>
+                    </h1>
                 </div>
 
-            </div>
-            <div class="panel-body" style="margin: 10px; padding:10px;">
-                {{ $thread->body }}
+                @foreach ($threads as $thread)
+                    <div class="card" style="margin: 10px">
+                        <div class="card-header">
+                            <div class="level">
+                                <span class="flex">
+                                    <a href="{{ route('profile', $thread->creator) }}">{{ $thread->creator->name }}</a> posted:
+                                    <a href="{{ $thread->path() }}">{{$thread->title}}</a>
+                                </span>
+                                <span>
+                                    {{ $thread->created_at->diffForHumans() }}
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="panel-body" style="margin: 10px; padding:10px;">
+                            {{ $thread->body }}
+                        </div>
+                    </div>
+                @endforeach
+
+                {{ $threads->links() }}
             </div>
         </div>
-    @endforeach
+    </div>
 
-    {{ $threads->links() }}
 
 @endsection

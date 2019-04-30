@@ -22,6 +22,7 @@ Route::group(['prefix' => 'forum'], function() {
     Route::get('threads/create', 'ThreadsController@create')->name('createThread');
     Route::get('/threads/{channel}', 'ThreadsController@index')->name('channels');
     Route::get('/threads/{channel}/{thread}', 'ThreadsController@show')->name('showThread');
+    Route::delete('/threads/{channel}/{thread}', 'ThreadsController@destroy')->name('deleteThread');
 
     Route::post('/threads/{channel}/{thread}/replies', 'RepliesController@store')->name('saveReply');
 

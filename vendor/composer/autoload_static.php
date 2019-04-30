@@ -465,6 +465,7 @@ class ComposerStaticInita711671ceaa4bab33543e8a57c6a848c
     );
 
     public static $classMap = array (
+        'App\\Activity' => __DIR__ . '/../..' . '/app/Activity.php',
         'App\\Channel' => __DIR__ . '/../..' . '/app/Channel.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -492,6 +493,7 @@ class ComposerStaticInita711671ceaa4bab33543e8a57c6a848c
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Policies\\ThreadPolicy' => __DIR__ . '/../..' . '/app/Policies/ThreadPolicy.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -4470,6 +4472,7 @@ class ComposerStaticInita711671ceaa4bab33543e8a57c6a848c
         'Tests\\Feature\\ReplyTest' => __DIR__ . '/../..' . '/tests/Feature/ReplyTest.php',
         'Tests\\Feature\\ThreadTest' => __DIR__ . '/../..' . '/tests/Feature/ThreadTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
+        'Tests\\Unit\\ActivityTest' => __DIR__ . '/../..' . '/tests/Feature/ActivityTest.php',
         'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'Tests\\Unit\\FavoritesTest' => __DIR__ . '/../..' . '/tests/Feature/FavoritesTest.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
