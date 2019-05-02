@@ -37,7 +37,7 @@ class AshleeCouponController extends Controller
         $now = new Carbon();
         $lastCouponDate = new Carbon(AshleeCoupon::max('redeemed_at'));
         $nextCouponDate = $lastCouponDate->copy()->addDays(7);
-        if ($nextCouponDate <= $now) {
+        if ($nextCouponDate <= $now || $lastCouponDate = $now) {
             $days = 0;
         } else {
             $days = $nextCouponDate->diffInDays($now);
@@ -46,11 +46,6 @@ class AshleeCouponController extends Controller
             $days = 0;
         }
         return $days;
-    }
-
-    private function addToUsedCouponsArray($couponId)
-    {
-
     }
 
     protected function getCoupons()
