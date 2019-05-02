@@ -8,7 +8,7 @@
             <div class="col-md-6 col-md-offset-6">
                 <h1>Ashlee's Coupons</h1><br>
                 <div class="countdown">
-                    <h2>Days Until Next Coupon:<span id="coupon-timer" style="color: {{ $daysRemaining == 0 ? 're' }}"> {{ $daysRemaining }}</span></h2>
+                    <h2>Days Until Next Coupon:<span id="coupon-timer" style="color: {{ $daysRemaining == 0 ? 'green' : 'red' }}"> {{ $daysRemaining }}</span></h2>
                 </div>
             </div>
         </div><br><br><br>
