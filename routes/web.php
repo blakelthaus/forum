@@ -33,6 +33,11 @@ Route::group(['prefix' => 'forum'], function() {
 
     Route::get('/profiles/{user}', 'ProfilesController@show')->name('profile');
 
+    Route::group(['prefix' => 'ashlee'], function() {
+        Route::get('/', 'AshleeCouponController@index')->name('coupons');
+        Route::post('/{couponId}', 'AshleeCouponController@redeem')->name('redeemCoupon');
+    });
+
     Auth::routes();
 
 });
