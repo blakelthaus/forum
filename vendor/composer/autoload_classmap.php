@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Activity' => $baseDir . '/app/Activity.php',
+    'App\\AshleeCoupon' => $baseDir . '/app/AshleeCoupon.php',
     'App\\Channel' => $baseDir . '/app/Channel.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -14,6 +15,7 @@ return array(
     'App\\Favorite' => $baseDir . '/app/Favorite.php',
     'App\\Filters\\Filters' => $baseDir . '/app/Filters/Filters.php',
     'App\\Filters\\ThreadFilters' => $baseDir . '/app/Filters/ThreadFilters.php',
+    'App\\Http\\Controllers\\AshleeCouponController' => $baseDir . '/app/Http/Controllers/AshleeCouponController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -40,6 +42,7 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
+    'App\\RecordsActivity' => $baseDir . '/app/RecordsActivity.php',
     'App\\Reply' => $baseDir . '/app/Reply.php',
     'App\\Thread' => $baseDir . '/app/Thread.php',
     'App\\User' => $baseDir . '/app/User.php',

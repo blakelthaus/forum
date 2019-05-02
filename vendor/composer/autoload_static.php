@@ -466,6 +466,7 @@ class ComposerStaticInita711671ceaa4bab33543e8a57c6a848c
 
     public static $classMap = array (
         'App\\Activity' => __DIR__ . '/../..' . '/app/Activity.php',
+        'App\\AshleeCoupon' => __DIR__ . '/../..' . '/app/AshleeCoupon.php',
         'App\\Channel' => __DIR__ . '/../..' . '/app/Channel.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -473,6 +474,7 @@ class ComposerStaticInita711671ceaa4bab33543e8a57c6a848c
         'App\\Favorite' => __DIR__ . '/../..' . '/app/Favorite.php',
         'App\\Filters\\Filters' => __DIR__ . '/../..' . '/app/Filters/Filters.php',
         'App\\Filters\\ThreadFilters' => __DIR__ . '/../..' . '/app/Filters/ThreadFilters.php',
+        'App\\Http\\Controllers\\AshleeCouponController' => __DIR__ . '/../..' . '/app/Http/Controllers/AshleeCouponController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -499,6 +501,7 @@ class ComposerStaticInita711671ceaa4bab33543e8a57c6a848c
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\RecordsActivity' => __DIR__ . '/../..' . '/app/RecordsActivity.php',
         'App\\Reply' => __DIR__ . '/../..' . '/app/Reply.php',
         'App\\Thread' => __DIR__ . '/../..' . '/app/Thread.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
