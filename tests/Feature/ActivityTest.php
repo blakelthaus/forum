@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\Activity;
+use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -42,5 +43,24 @@ class ActivityTest extends TestCase
 
         $this->assertEquals(2, Activity::count());
 
+    }
+
+    /** @test */
+    function test_it_fetches_a_feed_for_any_user()
+    {
+        //we have a thread
+        $this->signIn();
+        create('App\Thread', ['user_id' => auth()->id()], 2);
+        //and another thread from a week ago "BOUT A WEEK AGOOO" (we are actually just manually editing one we created for testing purposes)
+        auth()->user()->activity()->first()->update(['created_at' => Carbon::now()->subWeek()]);
+        //when we fetche their feed
+        $feed = Activity::feed(auth()->user());
+        //then it should be returned in the proper format (Grouped by date in order from newest to oldest)
+        $this->assertTrue($feed->keys()->contains(
+            Carbon::now()->format('Y-m-d')
+        ));
+        $this->assertTrue($feed->keys()->contains(
+            Carbon::now()->subWeek()->format('Y-m-d')
+        ));
     }
 }
