@@ -21,7 +21,9 @@ Route::group(['prefix' => 'forum'], function() {
         return view('welcome');
     });
 
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home',  function () {
+        return view('welcome');
+    });
     Route::get('threads', 'ThreadsController@index')->name('threads');
 
     Route::post('threads', 'ThreadsController@store')->name('saveThreads');
