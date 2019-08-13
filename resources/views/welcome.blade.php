@@ -85,13 +85,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{route('threads')}}">Blake's Forum</a>
-                    <a href="{{ route('cheatSheet') }}">Exam Cheat Sheet Compiler</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{route('threads')}}">TDD Forum</a>
+                    <a href="{{route('home.show')}}">Geospatial Neighborhood Search</a>
                 </div>
             </div>
         </div>
