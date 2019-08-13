@@ -10,6 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::group(['prefix' => 'spatial'], function() {
+    Route::get('/', 'HomeController@show')->name('home.show');
+    Route::post('/', 'HomeController@submit')->name('home.submit');
+});
+
 Route::group(['prefix' => 'forum'], function() {  
     Route::get('/', function () {
         return view('welcome');
