@@ -4,7 +4,7 @@
 
     <div class="bg-gray-300">
         <div class="bg-gray-100 flex">
-            <div class="px-8 py-12 lg:w-1/2 sm:max-w-xl max-w-md mx-auto lg:max-w-full lg:py-24 lg:px-12 ">
+            <div class="px-8 py-12 lg:w-1/2 sm:max-w-xl max-w-md mx-auto lg:max-w-full lg:py-24 lg:px-12">
                 <div class="xl:max-w-lg xl:ml-auto">
                     <img class="h-10" src="/img/logo.svg" alt="Workcation">
                     <img class="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-64 sm:w-full sm:object-cover sm:object-center lg:hidden" src="/img/beach-work.jpg" alt="Woman Workationing at beach">
@@ -16,7 +16,7 @@
                         Workation helps you find work friendly rentals in great locations so you can enjoy some nice weather even when your're not on vacation.
                     </p>
                     <div class="mt-4 sm:mt-6">
-                        <a href="#" class="inline-block bg-indigo-500 px-5 py-3 rounded-lg shadow-lg text-sm text-white uppercase tracking-wider font-semibold sm:text-base">Book your escape</a>
+                        <a href="#" class="btn btn-indigo shadow-lg sm:text-base">Book your escape</a>
                     </div>
                 </div>
             </div>

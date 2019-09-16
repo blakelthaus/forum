@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Borgholthaus') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -39,9 +39,9 @@
         }
     </style>
 </head>
-<body style="padding: 100px;">
+<body>
 <div id="app">
-    <main class="py-4">
+    <main>
         @yield('content')
     </main>
 </div>

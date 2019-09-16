@@ -607,6 +607,7 @@ class ComposerStaticInita711671ceaa4bab33543e8a57c6a848c
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\ProfilesController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfilesController.php',
         'App\\Http\\Controllers\\RepliesController' => __DIR__ . '/../..' . '/app/Http/Controllers/RepliesController.php',
+        'App\\Http\\Controllers\\Tailwind' => __DIR__ . '/../..' . '/app/Http/Controllers/Tailwind.php',
         'App\\Http\\Controllers\\ThreadsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ThreadsController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',

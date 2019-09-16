@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/', 'BlakeController@index');
+
 Route::group(['prefix' => 'spatial'], function() {
     Route::get('/', 'HomeController@show')->name('home.show');
     Route::post('/', 'HomeController@submit')->name('home.submit');
