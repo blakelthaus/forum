@@ -2,14 +2,25 @@
 
 @section('content')
 
-    <div id="sidebar" class="bg-green-600 px-4 py-12 lg:px-12 h-screen w-1/4">
-        <h1 class="py-4 text-white lg:text-4xl sm:text-2xl">Blake Borgholthaus</h1>
-        <img class="mx-auto rounded-full content-center" src="/img/blake.jpg" alt="Blakes Picture">
-        <ul class="py-6">
-            <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="#">Resume</a></li>
-            <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="#">About Me</a></li>
-            <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="#">Data Visualization</a></li>
-        </ul>
+<div id="home-page">
+    <div class="py-10 px-10 my-10 mx-10 max-w-md rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="/img/zootah.jpg" alt="Zootah Wordpress Site">
+        <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">Zootah, not the zoo you knew</div>
+            <p class="text-gray-700 text-base">
+                Wordpress Site built in Systems Development Life Cycle Class
+            </p>
+        </div>
     </div>
+    <div class="py-10 px-10 my-10 mx-10 max-w-md rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="/img/zootah.jpg" alt="Sigma Chi Derby Days">
+        <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">Sigma Chi Derby Days</div>
+            <p class="text-gray-700 text-base">
+                Wordpress Site built for the Sigma Chi Fraternity to use for fundraising.
+            </p>
+        </div>
+    </div>
+</div>
 
 @endsection
