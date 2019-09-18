@@ -13,6 +13,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
+    <script src="https://kit.fontawesome.com/2eda377822.js" crossorigin="anonymous"></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="/build/tailwind.css">
@@ -44,13 +46,19 @@
         <main>
             <div class="flex flex-row">
                 <div id="sidebar" class="bg-green-600 px-4 py-12 lg:px-12 h-screen w-1/5">
-                    <h1 class="py-4 text-white lg:text-4xl sm:text-2xl">Blake Borgholthaus</h1>
+                    <h1 class="py-4 text-white lg:text-4xl sm:text-2xl"><a class="hover:text-black" href="/">Blake Borgholthaus</a></h1>
                     <img class="mx-auto rounded-full content-center" src="/img/blake.jpg" alt="Blakes Picture">
                     <ul class="py-6">
                         <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="#">Skillz</a></li>
                         <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="#">About Me</a></li>
                         <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="#">Contact</a></li>
                     </ul>
+                    <div id="social" class="flex flex-row">
+                        <a class="py-2 flex text-white lg:text-3xl sm:text-2xl hover:text-black hover:no-underline" href="https://www.facebook.com/blake.borgholthaus"><i class="fab fa-facebook-square hover:text-black"></i></a>
+                        <a class="py-2 flex text-white lg:text-3xl sm:text-2xl hover:text-black hover:no-underline" href="https://www.instagram.com/blakelthaus/"><i class="fab fa-instagram hover:text-black"></i></i></a>
+                        <a class="py-2 flex text-white lg:text-3xl sm:text-2xl hover:text-black hover:no-underline" href="https://www.linkedin.com/in/blake-borgholthaus"><i class="fab fa-linkedin hover:text-black"></i></i></a>
+                    </div>
+
                 </div>
                 <div id="content" class="flex-auto">
                     @yield('content')

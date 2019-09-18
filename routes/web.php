@@ -13,6 +13,8 @@
 
 Route::get('/', 'BlakeController@index');
 
+Route::get('/tailwind', 'Tailwind@index');
+
 Route::group(['prefix' => 'spatial'], function() {
     Route::get('/', 'HomeController@show')->name('home.show');
     Route::post('/', 'HomeController@submit')->name('home.submit');
@@ -42,8 +44,6 @@ Route::group(['prefix' => 'forum'], function() {
     Route::post('/replies/{reply}/favorites', 'FavoritesController@store')->name('favorite');
 
     Route::get('/profiles/{user}', 'ProfilesController@show')->name('profile');
-
-    Route::get('/tailwind', 'Tailwind@index');
 
     Route::group(['prefix' => 'ashlee'], function() {
         Route::get('/', 'AshleeCouponController@index')->name('coupons');
