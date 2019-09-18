@@ -10,4 +10,9 @@ class BlakeController extends Controller
     {
         return view('blake.index');
     }
+
+    public function contact()
+    {
+        return view('blake.contact');
+    }
 }

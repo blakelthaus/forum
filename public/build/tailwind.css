@@ -649,6 +649,19 @@ video {
   box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
 }
 
+.btn-green {
+  background-color: #38a169;
+  color: #fff
+}
+
+.btn-green:hover {
+  background-color: #48bb78;
+}
+
+.btn-green:active {
+  background-color: #2f855a;
+}
+
 .btn-indigo {
   background-color: #667eea;
   color: #fff
@@ -673,6 +686,28 @@ video {
 
 .btn-gray:active {
   background-color: #718096;
+}
+
+.form-input {
+  background-color: #fff;
+  border-width: 1px;
+  border-color: #e2e8f0;
+  border-radius: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: block;
+  width: 50%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  line-height: 1.5
+}
+
+.form-input:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5)
 }
 
 .sr-only {

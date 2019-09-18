@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'BlakeController@index');
+Route::get('/contact', 'BlakeController@contact');
 
 Route::get('/tailwind', 'Tailwind@index');
 

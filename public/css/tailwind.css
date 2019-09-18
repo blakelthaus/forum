@@ -8,6 +8,15 @@
     @apply outline-none shadow-outline;
 }
 
+.btn-green {
+    @apply bg-green-600 text-white
+}
+.btn-green:hover {
+    @apply bg-green-500;
+}
+.btn-green:active {
+    @apply bg-green-700;
+}
 
 .btn-indigo {
     @apply bg-indigo-500 text-white
@@ -27,6 +36,14 @@
 }
 .btn-gray:active {
     @apply bg-gray-600;
+}
+
+.form-input {
+    @apply bg-white border border-gray-300 rounded-lg py-2 px-4 block w-1/2 appearance-none leading-normal
+}
+
+.form-input:focus {
+    @apply outline-none shadow-outline
 }
 
 
