@@ -45,7 +45,7 @@
     <div id="app">
         <main>
             <div class="flex flex-row">
-                <div id="sidebar" class="bg-green-600 px-4 py-12 lg:px-12 h-screen w-1/5">
+                <div id="sidebar" class="fixed bg-green-600 px-4 py-12 lg:px-12 h-full min-h-screen w-1/5">
                     <h1 class="py-4 text-white lg:text-4xl sm:text-2xl"><a class="hover:text-black" href="/">Blake Borgholthaus</a></h1>
                     <img class="mx-auto rounded-full content-center" src="/img/blake.jpg" alt="Blakes Picture">
                     <ul class="py-6">
@@ -58,9 +58,9 @@
                         <a class="py-2 flex text-white lg:text-3xl sm:text-2xl hover:text-black hover:no-underline" href="https://www.instagram.com/blakelthaus/"><i class="fab fa-instagram hover:text-black"></i></i></a>
                         <a class="py-2 flex text-white lg:text-3xl sm:text-2xl hover:text-black hover:no-underline" href="https://www.linkedin.com/in/blake-borgholthaus"><i class="fab fa-linkedin hover:text-black"></i></i></a>
                     </div>
-
                 </div>
-                <div id="content" class="flex-auto">
+                <div id="content" class="flex flex-auto">
+                    <div class="h-full min-h-screen w-1/5"></div>
                     @yield('content')
                 </div>
             </div>
