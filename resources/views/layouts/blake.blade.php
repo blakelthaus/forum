@@ -19,14 +19,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="/build/tailwind.css">
 
-    <!-- include summernote css/js -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
-
     <!-- Scripts -->
-    <script src="https://blakeborgholthaus.com/js/app.js" defer></script>
-
-
+    <script src="{{ env('APP_URL', 'https://blakeborgholthaus.com') }}/js/app.js" defer></script>
+    <script src="{{ env('APP_URL', 'https://blakeborgholthaus.com') }}/js/tire.js" defer></script>
 
     <style>
         body {
@@ -39,6 +34,12 @@
         .flex {
             flex: 1;
         }
+        #selfy {
+
+        }
+        #tire {
+
+        }
     </style>
 </head>
 <body>
@@ -47,7 +48,9 @@
             <div class="flex flex-row">
                 <div id="sidebar" class="fixed bg-green-600 px-4 py-12 lg:px-12 h-full min-h-screen w-1/5">
                     <h1 class="py-4 text-white lg:text-4xl sm:text-2xl"><a class="hover:text-black" href="/">Blake Borgholthaus</a></h1>
-                    <img class="mx-auto rounded-full content-center" src="/img/blake.jpg" alt="Blakes Picture">
+                    <img id="tire" class="absolute left-0" src="/img/tire-2.png" alt="spinny-wheel">
+                    <img id="selfy" class="relative p-8 mt-3 object-bottom rounded-full" src="/img/blake.jpg" alt="Blakes Picture">
+
                     <ul class="py-6">
                         <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="#">Skillz</a></li>
                         <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="#">About Me</a></li>
@@ -60,7 +63,7 @@
                     </div>
                 </div>
                 <div id="content" class="flex flex-auto">
-                    <div class="h-full min-h-screen w-1/5"></div>
+                    <div class="h-full min-h-screen w-1/4"></div>
                     @yield('content')
                 </div>
             </div>
