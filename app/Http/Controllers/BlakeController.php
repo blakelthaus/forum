@@ -15,4 +15,9 @@ class BlakeController extends Controller
     {
         return view('blake.contact');
     }
+
+    public function resume()
+    {
+        return view('blake.resume');
+    }
 }

@@ -6,7 +6,7 @@
     <div id="about-me" class="flex flex-row">
         <div class="px-10 py-10">
             <h2 class="text-gray-900 text-4xl">About Me</h2>
-            <p class="text-gray-600">Some info and stuff about me coming soon.</p>
+            <p class="text-gray-600">I like Computers, Skiing and Biking.</p>
         </div>
     </div>
     <div id="projects">

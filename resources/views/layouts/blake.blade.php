@@ -52,7 +52,7 @@
                     <img id="selfy" class="relative p-8 mt-3 object-bottom rounded-full" src="/img/blake.jpg" alt="Blakes Picture">
 
                     <ul class="py-6">
-                        <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="#">Skillz</a></li>
+                        <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="/resume">Resume</a></li>
                         <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="#">About Me</a></li>
                         <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="/contact">Contact</a></li>
                     </ul>
