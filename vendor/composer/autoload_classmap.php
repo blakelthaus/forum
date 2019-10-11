@@ -27,6 +27,7 @@ return array(
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\ProfilesController' => $baseDir . '/app/Http/Controllers/ProfilesController.php',
     'App\\Http\\Controllers\\RepliesController' => $baseDir . '/app/Http/Controllers/RepliesController.php',
+    'App\\Http\\Controllers\\Tailwind' => $baseDir . '/app/Http/Controllers/Tailwind.php',
     'App\\Http\\Controllers\\ThreadsController' => $baseDir . '/app/Http/Controllers/ThreadsController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
