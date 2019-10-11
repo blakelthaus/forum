@@ -15,6 +15,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="/build/tailwind.css">
 
     <!-- include summernote css/js -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
@@ -22,6 +23,8 @@
 
     <!-- Scripts -->
     <script src="https://blakeborgholthaus.com/js/app.js" defer></script>
+
+
 
     <style>
         body {
