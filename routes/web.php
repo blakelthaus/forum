@@ -17,6 +17,9 @@ Route::get('/resume', 'BlakeController@resume');
 
 Route::get('/tailwind', 'Tailwind@index');
 
+Route::get('/resize', 'ImageResize@index');
+Route::post('/submit-resize', 'ImageResize@resize');
+
 Route::group(['prefix' => 'spatial'], function() {
     Route::get('/', 'HomeController@show')->name('home.show');
     Route::post('/', 'HomeController@submit')->name('home.submit');
