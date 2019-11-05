@@ -55,6 +55,7 @@
                         <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="/resume">Resume</a></li>
                         <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="#">About Me</a></li>
                         <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="/contact">Contact</a></li>
+                        <li class="py-2 flex text-white lg:text-3xl sm:text-2xl"><a class="hover:text-black" href="/vgk">VGK Stats</a></li>
                     </ul>
                     <div id="social" class="flex flex-row">
                         <a class="py-2 flex text-white lg:text-3xl sm:text-2xl hover:text-black hover:no-underline" href="https://www.facebook.com/blake.borgholthaus"><i class="fab fa-facebook-square hover:text-black"></i></a>

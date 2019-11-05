@@ -2,20 +2,20 @@
 
 @section('content')
 
-<div id="home-page" >
+<div class="w-11/12" id="home-page" >
     <div id="about-me" class="flex flex-row">
         <div class="px-10 py-10">
             <h2 class="text-gray-900 text-4xl">About Me</h2>
             <p class="text-gray-600">I like Computers, Skiing and Biking.</p>
         </div>
     </div>
-    <div id="projects">
+    <div class="w-11/12" id="projects">
         <div class="px-10">
             <h2 class="text-gray-900 text-4xl">Projects</h2>
         </div>
         <div class="flex flex-column">
             <div class="px-10 py-10">
-                <div class="max-w-xl rounded overflow-hidden shadow-lg">
+                <div class="rounded overflow-hidden shadow-lg">
                     <a href="https://sigmachiderbydays.com"><img class="w-full" src="/img/derbydays.png" alt="Sigma Chi Derby Days"></a>
                     <div class="px-6 py-4">
                         <div class="font-bold text-xl mb-2"><a href="https://sigmachiderbydays.com">Sigma Chi Derby Days</a></div>
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="px-10 py-10">
-                <div class="max-w-xl rounded overflow-hidden shadow-lg">
+                <div class="rounded overflow-hidden shadow-lg">
                     <a href="/tailwind"><img class="w-full" src="/img/tailwind.png" alt="Tailwind Practice Image"></a>
                     <div class="px-6 py-4">
                         <div class="font-bold text-xl mb-2"><a href="/tailwind">Tailwind CSS Practice</a></div>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="px-10 py-10">
-                <div class="max-w-xl rounded overflow-hidden shadow-lg">
+                <div class="rounded overflow-hidden shadow-lg">
                     <a href="https://zootah.org"><img class="w-full" src="/img/zootah.png" alt="Zootah Wordpress Site"></a>
                     <div class="px-6 py-4">
                         <div class="font-bold text-xl mb-2"><a href="https://zootah.org">Zootah, not the zoo you knew</a></div>
