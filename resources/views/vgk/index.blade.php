@@ -55,7 +55,9 @@
         }
     </script>
 
-    <h1 class="text-5xl font-bold">{{ $team->name }}</h1>
+    <a class="text-3xl text-blue-300" href="{{ env('APP_URL', 'https://blakeborgholthaus.com') }}" title="home">< Home</a>
+
+    <h1 class="text-5xl font-bold">{{ $team->name }} via NHL Open API</h1>
 
     <div class="flex mb-4 pt-10">
         <div class="w-1/3">
