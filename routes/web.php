@@ -22,6 +22,10 @@ Route::group(['prefix' => 'spatial'], function() {
     Route::post('/', 'HomeController@submit')->name('home.submit');
 });
 
+Route::group(['prefix' => 'vgk'], function() {
+    Route::get('/', 'KnightsController@index')->name('vgk.index');
+});
+
 Route::group(['prefix' => 'forum'], function() {
     Route::get('/', function () {
         return view('welcome');
