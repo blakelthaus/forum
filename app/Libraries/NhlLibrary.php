@@ -63,6 +63,26 @@ class NhlLibrary
         return $this->sortScheduledGames($games);
     }
 
+    public function getStatsSummaryForDisplay($id)
+    {
+        $uri = $this->baseUri . $id .'?expand=team.stats';
+        $stats = $this->makeApiCall($uri);
+
+        $finalStats = $this->sortFinalStatsFromResponse($stats->teams[0]->teamStats[0]->splits);
+
+        return $finalStats;
+    }
+
+    private function sortFinalStatsFromResponse($splitStats)
+    {
+        $stats = [
+            'numeric' => $splitStats[0]->stat,
+            'rankings' => $splitStats[1]->stat,
+        ];
+
+        return $stats;
+    }
+
     private function sortScheduledGames($games)
     {
         $scheduledGames = array_reduce($games->dates, function ($carry, $gameDay) {

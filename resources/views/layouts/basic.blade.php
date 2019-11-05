@@ -21,10 +21,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
 
+    {{--Google Charts API--}}
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
     <!-- Scripts -->
-    <script src="https://blakeborgholthaus.com/js/app.js" defer></script>
-
-
+    <script src="{{ env('APP_URL', 'https://blakeborgholthaus.com') }}/js/app.js" defer></script>
+    <script src="{{ env('APP_URL', 'https://blakeborgholthaus.com') }}/js/chart.js" defer></script>
 
     <style>
         body {
