@@ -22,7 +22,8 @@ class KnightsController extends Controller
         $team = $this->nhlLibrary->getTeam($this->vgkId);
         $players = $this->nhlLibrary->getTeamRoster($this->vgkId);
         $games = $this->nhlLibrary->getUpcomingGames($this->vgkId);
-
-        return view('vgk.index', ['team' => $team, 'players' => $players, 'games' => $games]);
+        $teamStats = $this->nhlLibrary->getStatsSummaryForDisplay($this->vgkId);
+//        dd($teamStats);
+        return view('vgk.index', ['team' => $team, 'players' => $players, 'games' => $games, 'stats' => $teamStats]);
     }
 }
