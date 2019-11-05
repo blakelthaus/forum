@@ -24,6 +24,7 @@ Route::group(['prefix' => 'spatial'], function() {
 
 Route::group(['prefix' => 'vgk'], function() {
     Route::get('/', 'KnightsController@index')->name('vgk.index');
+    Route::post('/player/{playerId}', 'KnightsController@player')->name('vgk.player');
 });
 
 Route::group(['prefix' => 'forum'], function() {

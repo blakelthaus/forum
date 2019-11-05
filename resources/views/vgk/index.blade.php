@@ -21,7 +21,7 @@
             ]);
 
             var options = {'title':'VGK Win Loss Tracker',
-                'width':400,
+                'width':300,
                 'height':250};
 
             var chart = new google.visualization.PieChart(document.getElementById('chart_div_wins'));
@@ -39,7 +39,7 @@
             ]);
 
             var options = {'title':'VGK Avg. Shots Taken/Allowed Per Game',
-                'width':400,
+                'width':300,
                 'height':250};
 
             var chart = new google.visualization.PieChart(document.getElementById('chart_div_shots'));
@@ -59,8 +59,8 @@
 
     <h1 class="text-5xl font-bold">{{ $team->name }} via NHL Open API</h1>
 
-    <div class="flex mb-4 pt-10">
-        <div class="w-1/3">
+    <div class="lg:flex lg:flex-column xl:flex-row mb-4 pt-10">
+        <div class="lg:w-11/12 xl:w-1/3">
             <h2 class="text-4xl">Team Info</h2>
             <ul>
                 <li>Location: {{ $team->locationName }}</li>
@@ -79,23 +79,24 @@
             <div id="chart_div_wins"></div>
             <div id="chart_div_shots"></div>
         </div>
-        <div class="w-1/3">
+        <div class="lg:w-11/12 xl:w-1/3">
             <h2 class="text-4xl">Player Info</h2>
             @foreach ($players as $player)
                 <div class="pt-6">
                     <form method="post" action="/vgk/player/{{ $player->person->id }}">
+                        {{ csrf_field() }}
                         <input type="hidden" name="" value="{{ $player->person->link }}">
                         <p class="text-2xl font-bold">{{ $player->person->fullName }}</p>
                         <ul>
                             <li><span class="font-bold">Jersey Number</span>: {{ $player->jerseyNumber }}</li>
                             <li><span class="font-bold">Position:</span> {{ $player->position->name }}</li>
                         </ul>
-                        <input type="submit" value="Learn More">
+                        <input class="cursor-pointer hover:bg-blue-300 m-2" type="submit" value="Learn More">
                     </form>
                 </div>
             @endforeach
         </div>
-        <div class="w-1/3">
+        <div class="lg:w-11/12 xl:w-1/3">
             <h2 class="text-4xl">Upcoming Games</h2>
             @foreach ($games as $game)
                 <div class="border-2">
