@@ -103,7 +103,7 @@ class NhlLibrary
             $gameDate = new Carbon($gameDay->games[0]->gameDate);
 
             $carry[] = [
-                'date' => $gameDate->format('m-d-Y'),
+                'date' => $gameDate->toFormattedDateString(),
                 'homeTeam' => $gameDay->games[0]->teams->home->team->name,
                 'homeTeamRecord' => '(' . $homeTeamRecord->wins . ' - ' . $homeTeamRecord->losses . ' - ' . $homeTeamRecord->ot . ')',
                 'awayTeam' => $gameDay->games[0]->teams->away->team->name,

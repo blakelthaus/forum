@@ -81,26 +81,34 @@
         </div>
         <div class="lg:w-11/12 xl:w-1/3">
             <h2 class="text-4xl">Player Info</h2>
-            @foreach ($players as $player)
-                <div class="pt-6">
-                    <form method="post" action="/vgk/player/{{ $player->person->id }}">
-                        {{ csrf_field() }}
-                        <input type="hidden" name="" value="{{ $player->person->link }}">
-                        <p class="text-2xl font-bold">{{ $player->person->fullName }}</p>
-                        <ul>
-                            <li><span class="font-bold">Jersey Number</span>: {{ $player->jerseyNumber }}</li>
-                            <li><span class="font-bold">Position:</span> {{ $player->position->name }}</li>
-                        </ul>
-                        <input class="cursor-pointer hover:bg-blue-300 m-2" type="submit" value="Learn More">
-                    </form>
-                </div>
-            @endforeach
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Number</th>
+                    <th>More</th>
+                </tr>
+                @foreach ($players as $player)
+                    <tr class="pt-6">
+                        <td>{{ $player->person->fullName }}</td>
+                        <td>{{ $player->jerseyNumber }}</td>
+                        <td>{{ $player->position->name }}</td>
+                        <td>
+                            <form method="post" action="/vgk/player/{{ $player->person->id }}">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="" value="{{ $player->person->link }}">
+                                <input class="cursor-pointer hover:bg-blue-300 m-2" type="submit" value="Learn More">
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </table>
         </div>
         <div class="lg:w-11/12 xl:w-1/3">
             <h2 class="text-4xl">Upcoming Games</h2>
             @foreach ($games as $game)
                 <div class="border-2">
-                    <p class="font-3xl font-bold">Game Day: {{ $game['date'] }}</p>
+                    <p class="font-3xl font-bold">{{ $game['date'] }}</p>
                     <div class="pt-2 pb-2 flex flex-row">
                         <div class="w-2/5">
                             <p><span class="font-bold">{{ $game['homeTeam'] }}</span> </p>
