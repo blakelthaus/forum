@@ -26,4 +26,11 @@ class KnightsController extends Controller
 //        dd($teamStats);
         return view('vgk.index', ['team' => $team, 'players' => $players, 'games' => $games, 'stats' => $teamStats]);
     }
+
+    public function player(Request $request, $playerId)
+    {
+        $playerStats = $this->nhlLibrary->getPlayerSpecificStats($playerId);
+
+        return view('vgk.player-profile', ['info' => $playerStats['info'], 'stats' => $playerStats['stats']]);
+    }
 }
