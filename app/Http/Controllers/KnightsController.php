@@ -20,11 +20,11 @@ class KnightsController extends Controller
     public function index()
     {
         $team = $this->nhlLibrary->getTeam($this->vgkId);
-        $players = $this->nhlLibrary->getTeamRoster($this->vgkId);
-        $games = $this->nhlLibrary->getUpcomingGames($this->vgkId);
         $teamStats = $this->nhlLibrary->getStatsSummaryForDisplay($this->vgkId);
-//        dd($teamStats);
-        return view('vgk.index', ['team' => $team, 'players' => $players, 'games' => $games, 'stats' => $teamStats]);
+        $previousGame = $this->nhlLibrary->getPreviousGameResults($this->vgkId);
+        $nextGame = $this->nhlLibrary->getUpcomingGameInfo($this->vgkId);
+
+        return view('vgk.index', ['team' => $team, 'stats' => $teamStats, 'previousGame' => $previousGame, 'nextGame' => $nextGame]);
     }
 
     public function player(Request $request, $playerId)
@@ -32,5 +32,19 @@ class KnightsController extends Controller
         $playerStats = $this->nhlLibrary->getPlayerSpecificStats($playerId);
 
         return view('vgk.player-profile', ['info' => $playerStats['info'], 'stats' => $playerStats['stats']]);
+    }
+
+    public function players()
+    {
+        $players = $this->nhlLibrary->getTeamRoster($this->vgkId);
+
+        return view('vgk.players', ['players' => $players]);
+    }
+
+    public function games()
+    {
+        $games = $this->nhlLibrary->getUpcomingGames($this->vgkId);
+
+        return view('vgk.games', ['games' => $games]);
     }
 }

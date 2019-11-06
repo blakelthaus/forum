@@ -38,6 +38,30 @@ class NhlLibrary
         return $team->teams[0];
     }
 
+    public function getPreviousGameResults($id)
+    {
+        $uri = $this->baseUri . $id . '?expand=team.schedule.previous';
+        $team = $this->makeApiCall($uri);
+        $game = $team->teams[0]->previousGameSchedule->dates[0]->games[0];
+        $home = ($game->teams->home->team->id == $id) ? true : false;
+
+        return [
+            'home' => $home,
+            'knights' => ($home == true) ? $game->teams->home->team->name : $game->teams->away->team->name,
+            'knightsScore' => ($home == true) ? $game->teams->home->score : $game->teams->away->score,
+            'otherTeam' => ($home == true) ? $game->teams->away->team->name : $game->teams->home->team->name,
+            'otherScore' => ($home == true) ? $game->teams->away->score : $game->teams->home->score,
+        ];
+    }
+
+    public function getUpcomingGameInfo($id)
+    {
+        $games = $this->getUpcomingGames($id);
+        $gamesArray = $games->toArray();
+        $nextGame = $gamesArray[0];
+        return $nextGame;
+    }
+
     public function getTeamRoster($id)
     {
         $uri = $this->baseUri . $id . '/roster';
