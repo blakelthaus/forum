@@ -73,6 +73,18 @@ class NhlLibrary
         return $finalStats;
     }
 
+    public function getPlayerSpecificStats($playerId)
+    {
+        list($uri, $playerInfo) = $this->getPlayerBasicInformation($playerId);
+
+        $playerStats = $this->getPlayerSingleSeasonStats($uri);
+
+        return [
+            'info' => $playerInfo->people[0],
+            'stats' => $playerStats->stats[0]->splits[0]->stat,
+        ];
+    }
+
     private function sortFinalStatsFromResponse($splitStats)
     {
         $stats = [
@@ -126,6 +138,28 @@ class NhlLibrary
     public function getMultipleTeams($ids)
     {
 
+    }
+
+    /**
+     * @param string $uri
+     * @return mixed
+     */
+    private function getPlayerSingleSeasonStats(string $uri)
+    {
+        $statsUri = $uri . '/stats?stats=statsSingleSeason';
+        $playerStats = $this->makeApiCall($statsUri);
+        return $playerStats;
+    }
+
+    /**
+     * @param $playerId
+     * @return array
+     */
+    private function getPlayerBasicInformation($playerId)
+    {
+        $uri = 'https://statsapi.web.nhl.com/api/v1/people/' . $playerId;
+        $playerInfo = $this->makeApiCall($uri);
+        return array($uri, $playerInfo);
     }
 
 
