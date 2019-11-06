@@ -1,7 +1,7 @@
-@extends('vgk.index')
+@extends('layouts.vgk')
 
-@section('players')
-    <h2 class="text-4xl">Player Info</h2>
+@section('content')
+    <h1 class="text-5xl">Player Info</h1>
     @foreach ($players as $player)
         <div class="pt-6">
             <form method="post" action="/vgk/player/{{ $player->person->id }}">
