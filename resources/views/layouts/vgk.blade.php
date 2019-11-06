@@ -11,7 +11,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -41,10 +41,16 @@
         }
     </style>
 </head>
-<body style="padding: 100px;">
+<body style="">
+@include('vgk.nav')
+<br>
+<br>
+<br>
 <div id="app">
-    <main class="py-4">
-        @yield('content')
+    <main class="">
+        <div class="p-5">
+            @yield('content')
+        </div>
     </main>
 </div>
 </body>

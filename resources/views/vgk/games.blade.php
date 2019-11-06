@@ -1,6 +1,6 @@
-@extends('vgk.index')
+@extends('layouts.vgk')
 
-@section('games')
+@section('content')
     <h2 class="text-4xl">Upcoming Games</h2>
     @foreach ($games as $game)
         <div class="border-2">
