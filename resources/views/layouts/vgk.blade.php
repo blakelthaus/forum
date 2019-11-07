@@ -48,7 +48,7 @@
 <br>
 <div id="app">
     <main class="">
-        <div class="p-5">
+        <div class="flex">
             @yield('content')
         </div>
     </main>

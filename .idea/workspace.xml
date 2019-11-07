@@ -3,14 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="bb10d3aa-29de-432c-9d4e-485e30af3d43" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KnightsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KnightsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Libraries/NhlLibrary.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/NhlLibrary.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/basic.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/basic.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/vgk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/vgk.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vgk/charts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/charts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vgk/games.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/games.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vgk/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vgk/next-game.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/next-game.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vgk/players.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/players.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vgk/recent-games.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/recent-games.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vgk/stats.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/stats.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vgk/team.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/team.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -220,7 +222,8 @@
       <updated>1568387383941</updated>
       <workItem from="1568387385325" duration="1864000" />
       <workItem from="1568644492029" duration="5779000" />
-      <workItem from="1573057412557" duration="5971000" />
+      <workItem from="1573057412557" duration="10132000" />
+      <workItem from="1573142262396" duration="157000" />
     </task>
     <servers />
   </component>
@@ -232,10 +235,23 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/vgk/index.blade.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

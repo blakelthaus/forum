@@ -45,13 +45,7 @@ class NhlLibrary
         $game = $team->teams[0]->previousGameSchedule->dates[0]->games[0];
         $home = ($game->teams->home->team->id == $id) ? true : false;
 
-        return [
-            'home' => $home,
-            'knights' => ($home == true) ? $game->teams->home->team->name : $game->teams->away->team->name,
-            'knightsScore' => ($home == true) ? $game->teams->home->score : $game->teams->away->score,
-            'otherTeam' => ($home == true) ? $game->teams->away->team->name : $game->teams->home->team->name,
-            'otherScore' => ($home == true) ? $game->teams->away->score : $game->teams->home->score,
-        ];
+        return $this->sortPreviousGameInfo($home, $game);
     }
 
     public function getUpcomingGameInfo($id)
@@ -184,6 +178,28 @@ class NhlLibrary
         $uri = 'https://statsapi.web.nhl.com/api/v1/people/' . $playerId;
         $playerInfo = $this->makeApiCall($uri);
         return array($uri, $playerInfo);
+    }
+
+    /**
+     * @param bool $home
+     * @param $game
+     * @return array
+     */
+    private function sortPreviousGameInfo(bool $home, $game): array
+    {
+        $date = new Carbon($game->gameDate);
+
+        $previousGameInfo = [
+            'date' => $date->toFormattedDateString(),
+            'home' => $home,
+            'knights' => ($home == true) ? $game->teams->home->team->name : $game->teams->away->team->name,
+            'knightsScore' => ($home == true) ? $game->teams->home->score : $game->teams->away->score,
+            'otherTeam' => ($home == true) ? $game->teams->away->team->name : $game->teams->home->team->name,
+            'otherScore' => ($home == true) ? $game->teams->away->score : $game->teams->home->score,
+        ];
+
+        $previousGameInfo['vgkWin'] = $previousGameInfo['knightsScore'] > $previousGameInfo['otherScore'] ? true : false;
+        return $previousGameInfo;
     }
 
 
