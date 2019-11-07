@@ -6,5 +6,4 @@
         <li>Power Play Goals: {{ $stats['numeric']->powerPlayGoals }}</li>
     </ul>
 </div>
-<div id="chart_div_wins"></div>
-<div id="chart_div_shots"></div>
+

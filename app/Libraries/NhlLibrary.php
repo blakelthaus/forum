@@ -103,6 +103,17 @@ class NhlLibrary
         ];
     }
 
+
+    public function getAllPlayerStats($players)
+    {
+        $stats = [];
+        foreach($players as $player) {
+            $stats[$player->person->id] = $this->getPlayerSpecificStats($player->person->id);
+        }
+
+        return $stats;
+    }
+
     private function sortFinalStatsFromResponse($splitStats)
     {
         $stats = [

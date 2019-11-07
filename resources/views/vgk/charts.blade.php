@@ -18,7 +18,9 @@
 
         var options = {'title':'VGK Win Loss Tracker',
             'width':400,
-            'height':250};
+            'height':250,
+            'backgroundColor': '#F8FAFC'
+        };
 
         var chart = new google.visualization.PieChart(document.getElementById('chart_div_wins'));
         chart.draw(data, options);
@@ -36,7 +38,9 @@
 
         var options = {'title':'VGK Avg. Shots Taken/Allowed Per Game',
             'width':400,
-            'height':250};
+            'height':250,
+            'backgroundColor': '#F8FAFC'
+        };
 
         var chart = new google.visualization.PieChart(document.getElementById('chart_div_shots'));
         chart.draw(data, options);

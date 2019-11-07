@@ -1,22 +1,39 @@
 @extends('layouts.vgk')
 
 @section('content')
-    <div class="m-auto pt-10">
-        <div class="flex-column">
-            <h1 class="text-5xl">Player Info</h1>
+    <script>
+        function showDetails(playerID) {
+            var detailsDivName = 'details-' + playerID;
+            var playerDetails = document.getElementById(detailsDivName);
+            if (playerDetails.style.display === 'block') {
+                playerDetails.style.display = 'none';
+            } else {
+                playerDetails.style.display = 'block';
+            }
+        }
+    </script>
+    <div class="w-0 md:w-1/5"></div>
+    <div class="w-100 md:w-3/5">
+        <h1 class="text-5xl p-3">Player Info</h1>
+        <div class="flex-row">
             @foreach ($players as $player)
-                <div class="pt-6">
-                    <form method="post" action="/vgk/player/{{ $player->person->id }}">
-                        <input type="hidden" name="" value="{{ $player->person->link }}">
+                <div class="rounded overflow-hidden shadow-lg p-3 m-8">
+                    <div class="float-left">
                         <p class="text-2xl font-bold">{{ $player->person->fullName }}</p>
-                        <ul>
+                        <ul class="">
                             <li><span class="font-bold">Jersey Number</span>: {{ $player->jerseyNumber }}</li>
                             <li><span class="font-bold">Position:</span> {{ $player->position->name }}</li>
                         </ul>
-                        <input type="submit" value="Learn More">
-                    </form>
+                    </div>
+                    <div class="float-right">
+                        <button onclick="showDetails({{ $player->person->id }})">More</button>
+                    </div>
+                </div>
+                <div class="hidden rounded overflow-hidden shadow-lg p-3 m-8" id="details-{{ $player->person->id }}">
+                    @include('vgk.player-profile')
                 </div>
             @endforeach
         </div>
     </div>
+    <div class="w-0 md:w-1/5"></div>
 @endsection

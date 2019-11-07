@@ -1,7 +1,8 @@
 @extends('layouts.vgk')
 
 @section('content')
-    <div class="m-auto pt-10 w-95">
+    <div class="w-1/5"></div>
+    <div class="w-3/5">
         <div class="flex-column w-100">
             <h2 class="text-4xl">Upcoming Games</h2>
             @foreach ($games as $game)
@@ -24,4 +25,5 @@
             @endforeach
         </div>
     </div>
+    <div class="w-1/5"></div>
 @endsection
