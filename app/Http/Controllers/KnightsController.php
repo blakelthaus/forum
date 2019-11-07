@@ -37,8 +37,9 @@ class KnightsController extends Controller
     public function players()
     {
         $players = $this->nhlLibrary->getTeamRoster($this->vgkId);
+        $playerStats = $this->nhlLibrary->getAllPlayerStats($players);
 
-        return view('vgk.players', ['players' => $players]);
+        return view('vgk.players', ['players' => $players, 'playerStats' => $playerStats]);
     }
 
     public function games()
