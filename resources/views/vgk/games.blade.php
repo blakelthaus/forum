@@ -12,8 +12,8 @@
                     @foreach ($events as $event)
                     {
                         title: '{{ $event->title }}',
-                        start: '{{ $event->start->format('Y-m-d') }}',
-                        end: '{{ $event->end->format('Y-m-d') }}',
+                        start: '{{ $event->start }}',
+                        end: '{{ $event->end }}',
                         backgroundColor: '{{ (strpos($event->title, '@') !== false) ? '#2F3D40' : '#B8975C' }}',
                         textColor: '{{  (strpos($event->title, '@') !== false) ? 'white' : 'black'  }}'
                     },
@@ -25,7 +25,7 @@
         })
     </script>
 
-    <div class="p-5">
+    <div class="md:p-5">
         <div id="calendar"></div>
     </div>
 

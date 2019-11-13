@@ -48,9 +48,9 @@ class KnightsController extends Controller
 
     public function games()
     {
-        $games = $this->nhlLibrary->getUpcomingGames($this->vgkId, true);
+        $upcomingGames = $this->nhlLibrary->getUpcomingGames($this->vgkId, true);
 
-        $events = $this->createCalendarEvents($games);
+        $events = $this->createCalendarEvents($upcomingGames);
 
         return view('vgk.games', ['events' => $events]);
     }
