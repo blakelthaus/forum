@@ -15,6 +15,7 @@
                         start: '{{ $event->start }}',
                         end: '{{ $event->end }}',
                         backgroundColor: '{{ (strpos($event->title, '@') !== false) ? '#2F3D40' : '#B8975C' }}',
+                        borderColor: '{{ (strpos($event->title, '@') !== false) ? '#2F3D40' : '#B8975C' }}',
                         textColor: '{{  (strpos($event->title, '@') !== false) ? 'white' : 'black'  }}'
                     },
                     @endforeach
