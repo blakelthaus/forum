@@ -4,17 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Libraries\NhlLibrary;
 use Illuminate\Http\Request;
+use MaddHatter\LaravelFullcalendar\Calendar;
+use MaddHatter\LaravelFullcalendar\Event;
 
 class KnightsController extends Controller
 {
 
     protected $nhlLibrary;
     protected $vgkId;
+    protected $eventCalendar;
 
-    public function __construct(NhlLibrary $nhlLibrary)
+    public function __construct(NhlLibrary $nhlLibrary, Calendar $eventCalendar)
     {
         $this->nhlLibrary = $nhlLibrary;
         $this->vgkId = 54;
+        $this->eventCalendar = $eventCalendar;
     }
 
     public function index()
@@ -44,8 +48,25 @@ class KnightsController extends Controller
 
     public function games()
     {
-        $games = $this->nhlLibrary->getUpcomingGames($this->vgkId);
+        $games = $this->nhlLibrary->getUpcomingGames($this->vgkId, true);
 
-        return view('vgk.games', ['games' => $games]);
+        $events = $this->createCalendarEvents($games);
+
+        return view('vgk.games', ['events' => $events]);
+    }
+
+    private function createCalendarEvents($games)
+    {
+        $events = [];
+        foreach ($games as $game) {
+            $events[] = Calendar::event(
+                $game['name'],
+                false,
+                $game['date'],
+                $game['date']->copy()->addHours(3),
+                0
+            );
+        }
+        return $events;
     }
 }

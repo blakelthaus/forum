@@ -1,29 +1,32 @@
 @extends('layouts.vgk')
 
 @section('content')
-    <div class="w-1/5"></div>
-    <div class="w-3/5">
-        <div class="flex-column w-100">
-            <h2 class="text-4xl">Upcoming Games</h2>
-            @foreach ($games as $game)
-                <div class="border-2">
-                    <p class="font-3xl font-bold">Game Day: {{ $game['date'] }}</p>
-                    <div class="pt-2 pb-2 flex flex-row">
-                        <div class="w-2/5">
-                            <p><span class="font-bold">{{ $game['homeTeam'] }}</span> </p>
-                            <p>{{ $game['homeTeamRecord'] }}</p>
-                        </div>
-                        <div class="w-1/5 align-content-center">
-                            <p>VS</p>
-                        </div>
-                        <div class="w-2/5">
-                            <p><span class="font-bold">{{ $game['awayTeam'] }}</span></p>
-                            <p>{{ $game['awayTeamRecord'] }}</p>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['dayGrid'],
+                events: [
+                    @foreach ($events as $event)
+                    {
+                        title: '{{ $event->title }}',
+                        start: '{{ $event->start->format('Y-m-d') }}',
+                        end: '{{ $event->end->format('Y-m-d') }}',
+                        backgroundColor: '{{ (strpos($event->title, '@') !== false) ? '#2F3D40' : '#B8975C' }}',
+                        textColor: '{{  (strpos($event->title, '@') !== false) ? 'white' : 'black'  }}'
+                    },
+                    @endforeach
+                ]
+            });
+
+            calendar.render();
+        })
+    </script>
+
+    <div class="p-5">
+        <div id="calendar"></div>
     </div>
-    <div class="w-1/5"></div>
+
 @endsection

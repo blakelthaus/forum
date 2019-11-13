@@ -70,7 +70,7 @@ class NhlLibrary
         return $players->teams[0]->roster->roster;
     }
 
-    public function getUpcomingGames($id)
+    public function getUpcomingGames($id, $calendar=false)
     {
         $now = new Carbon();
         $from = $now->copy()->format('Y-m-d');
@@ -78,7 +78,7 @@ class NhlLibrary
         $uri = 'https://statsapi.web.nhl.com/api/v1/schedule?teamId='. $id .'&startDate='. $from .'&endDate='. $to;
         $games = $this->makeApiCall($uri);
 
-        return $this->sortScheduledGames($games);
+        return $this->sortScheduledGames($games, $calendar);
     }
 
     public function getStatsSummaryForDisplay($id)
@@ -124,24 +124,58 @@ class NhlLibrary
         return $stats;
     }
 
-    private function sortScheduledGames($games)
+    private function sortScheduledGames($games, $calendar)
     {
-        $scheduledGames = array_reduce($games->dates, function ($carry, $gameDay) {
+        $scheduledGames = array_reduce($games->dates, function ($carry, $gameDay) use ($calendar) {
+            $homeTeamName = $gameDay->games[0]->teams->home->team->name;
+            $awayTeamName = $gameDay->games[0]->teams->away->team->name;
             $homeTeamRecord = $gameDay->games[0]->teams->home->leagueRecord;
             $awayTeamRecord = $gameDay->games[0]->teams->away->leagueRecord;
             $gameDate = new Carbon($gameDay->games[0]->gameDate);
 
-            $carry[] = [
-                'date' => $gameDate->toFormattedDateString(),
-                'homeTeam' => $gameDay->games[0]->teams->home->team->name,
-                'homeTeamRecord' => '(' . $homeTeamRecord->wins . ' - ' . $homeTeamRecord->losses . ' - ' . $homeTeamRecord->ot . ')',
-                'awayTeam' => $gameDay->games[0]->teams->away->team->name,
-                'awayTeamRecord' => '(' . $awayTeamRecord->wins . ' - ' . $awayTeamRecord->losses . ' - ' . $awayTeamRecord->ot . ')',
-            ];
-
+            if ($calendar) {
+                $carry[] = [
+                    'date' => $gameDate,
+                    'name' => $this->getCalendarEventNameFromTeams($homeTeamName, $awayTeamName),
+                    'homeTeamRecord' => '(' . $homeTeamRecord->wins . ' - ' . $homeTeamRecord->losses . ' - ' . $homeTeamRecord->ot . ')',
+                    'awayTeamRecord' => '(' . $awayTeamRecord->wins . ' - ' . $awayTeamRecord->losses . ' - ' . $awayTeamRecord->ot . ')',
+                ];
+            } else {
+                $carry[] = [
+                    'date' => $gameDate->toFormattedDateString(),
+                    'homeTeam' => $homeTeamName,
+                    'homeTeamRecord' => '(' . $homeTeamRecord->wins . ' - ' . $homeTeamRecord->losses . ' - ' . $homeTeamRecord->ot . ')',
+                    'awayTeam' => $awayTeamName,
+                    'awayTeamRecord' => '(' . $awayTeamRecord->wins . ' - ' . $awayTeamRecord->losses . ' - ' . $awayTeamRecord->ot . ')',
+                ];
+            }
             return $carry;
         }, collect([]));
+
         return $scheduledGames;
+    }
+
+    private function getCalendarEventNameFromTeams($homeTeamName, $awayTeamName)
+    {
+        $homeTeamAbbreviation = $this->parseAbbreviationFromName($homeTeamName);
+        $awayTeamAbbreviation = $this->parseAbbreviationFromName($awayTeamName);
+
+        if ($homeTeamAbbreviation == 'VGK') {
+            return $homeTeamAbbreviation . ' VS ' . $awayTeamAbbreviation;
+        } else {
+            return $awayTeamAbbreviation . ' @ ' . $homeTeamAbbreviation;
+        }
+    }
+
+    private function parseAbbreviationFromName($name)
+    {
+        $words = explode(' ', $name);
+        $abbreviation = '';
+        foreach ($words as $word) {
+            $abbreviation .= $word[0];
+        }
+
+        return strtoupper($abbreviation);
     }
 
     public function getNextGame($id)
