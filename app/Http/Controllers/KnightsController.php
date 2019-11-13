@@ -55,6 +55,12 @@ class KnightsController extends Controller
         return view('vgk.games', ['events' => $events]);
     }
 
+    public function standings()
+    {
+        $nhlStandings = $this->nhlLibrary->getTeamsByConferenceDivisionAndRank($this->vgkId);
+        return view('vgk.standings', ['standings' => $nhlStandings, 'vgkId' => $this->vgkId]);
+    }
+
     private function createCalendarEvents($games)
     {
         $events = [];

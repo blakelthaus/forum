@@ -13,6 +13,7 @@
 <nav class="flex items-center justify-between flex-wrap bg-black p-6">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
         <img class="h-18 w-12" src="/img/vgk-logo.png" alt="Vegas Golden Knights">
+        <img class="h-18 w-50" src="/img/vegasgoldenknights.png" alt="Vegas Golden Knights">
     </div>
     <div class="block lg:hidden">
         <button onclick="showMenu()" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
@@ -27,8 +28,11 @@
             <a href="{{ route('vgk.players') }}" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-200 mr-4">
                 Players
             </a>
-            <a href="{{ route('vgk.games') }}" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-200">
+            <a href="{{ route('vgk.games') }}" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-200 mr-4">
                 Schedule
+            </a>
+            <a href="{{ route('vgk.standings') }}" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-200">
+                Standings
             </a>
         </div>
     </div>
