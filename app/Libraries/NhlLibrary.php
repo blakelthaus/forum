@@ -114,6 +114,35 @@ class NhlLibrary
         return $stats;
     }
 
+    public function getTeamsByConferenceDivisionAndRank($id)
+    {
+        $teams = $this->makeApiCall($this->baseUri . '?expand=team.stats');
+        $teamsSorted = $this->sortTeamsByDivisionAndPoints($teams->teams);
+
+        return $teamsSorted;
+    }
+
+    private function sortTeamsByDivisionAndPoints($teams)
+    {
+        $conferenceNames = $this->getConferenceNames();
+        $divisionNames = $this->getDivisionNames();
+        $teamsByConference = [];
+        foreach ($teams as $team) {
+            $stats = $team->teamStats[0]->splits[0];
+            $teamsByConference[$team->conference->id][$team->division->id][] = $stats;
+            usort($teamsByConference[$team->conference->id][$team->division->id], function($a, $b) {
+                return $a->stat->pts <= $b->stat->pts;
+            });
+            ksort($teamsByConference[$team->conference->id]);
+            ksort($teamsByConference);
+        }
+        return [
+            'conferences' => $conferenceNames,
+            'divisions' => $divisionNames,
+            'teams' => $teamsByConference
+        ];
+    }
+
     private function sortFinalStatsFromResponse($splitStats)
     {
         $stats = [
@@ -200,7 +229,7 @@ class NhlLibrary
 
     public function getTeamStats($id)
     {
-
+        return $this->makeApiCall($this->baseUri . '/' . $id . '?expand=team.stats');
     }
 
     public function getTeamHistoricRoster($id)
@@ -255,6 +284,24 @@ class NhlLibrary
 
         $previousGameInfo['vgkWin'] = $previousGameInfo['knightsScore'] > $previousGameInfo['otherScore'] ? true : false;
         return $previousGameInfo;
+    }
+
+    private function getConferenceNames()
+    {
+        return [
+            6 => 'Eastern',
+            5 => 'Western'
+        ];
+    }
+
+    private function getDivisionNames()
+    {
+        return [
+            18 => 'Metropolitan',
+            17 => 'Atlantic',
+            16 => 'Central',
+            15 => 'Pacific',
+        ];
     }
 
 
