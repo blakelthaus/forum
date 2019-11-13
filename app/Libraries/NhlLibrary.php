@@ -127,7 +127,7 @@ class NhlLibrary
     private function sortScheduledGames($games, $calendar)
     {
         $scheduledGames = array_reduce($games->dates, function ($carry, $gameDay) use ($calendar) {
-            $final = (isset($gameDay->games[0]->status->detailState) && $gameDay->games[0]->status->detailState == 'Final') ? true : false;
+            $final = ($gameDay->games[0]->status->detailedState == 'Final') ? true : false;
             $homeTeamName = $gameDay->games[0]->teams->home->team->name;
             $awayTeamName = $gameDay->games[0]->teams->away->team->name;
             $homeTeamRecord = $gameDay->games[0]->teams->home->leagueRecord;
