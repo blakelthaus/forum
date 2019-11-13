@@ -26,7 +26,14 @@
 
     <!-- Scripts -->
     <script src="{{ env('APP_URL', 'https://blakeborgholthaus.com') }}/js/app.js" defer></script>
-    <script src="{{ env('APP_URL', 'https://blakeborgholthaus.com') }}/js/charts.js" defer></script>
+
+    {{--Full Calendar Script Tags--}}
+    <link href="{{ env('APP_URL', 'https://blakeborgholthaus.com') }}/js/packages/core/main.css" rel="stylesheet">
+    <link href="{{ env('APP_URL', 'https://blakeborgholthaus.com') }}/js/packages/daygrid/main.css" rel="stylesheet">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="{{ env('APP_URL', 'https://blakeborgholthaus.com') }}/js/packages/core/main.js"></script>
+    <script src="{{ env('APP_URL', 'https://blakeborgholthaus.com') }}/js/packages/daygrid/main.js"></script>
 
     <style>
         body {

@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb10d3aa-29de-432c-9d4e-485e30af3d43" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/forum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/forum.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KnightsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KnightsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Libraries/NhlLibrary.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/NhlLibrary.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vgk/charts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/charts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/vgk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/vgk.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vgk/games.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/games.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vgk/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vgk/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vgk/player-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/player-profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vgk/players.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/players.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vgk/recent-games.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/recent-games.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vgk/stats.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vgk/stats.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,6 +165,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/maddhatter/laravel-fullcalendar" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -176,7 +177,8 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../business-center" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -219,6 +221,8 @@
       <workItem from="1568644492029" duration="5779000" />
       <workItem from="1573057412557" duration="10132000" />
       <workItem from="1573142262396" duration="8711000" />
+      <workItem from="1573572466815" duration="932000" />
+      <workItem from="1573581571768" duration="5772000" />
     </task>
     <servers />
   </component>
