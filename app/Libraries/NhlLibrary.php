@@ -135,7 +135,7 @@ class NhlLibrary
 
             if ($calendar) {
                 $carry[] = [
-                    'date' => $gameDate,
+                    'date' => $gameDate->setTimezone('America/Los_Angeles'),
                     'name' => $this->getCalendarEventNameFromTeams($homeTeamName, $awayTeamName),
                     'homeTeamRecord' => '(' . $homeTeamRecord->wins . ' - ' . $homeTeamRecord->losses . ' - ' . $homeTeamRecord->ot . ')',
                     'awayTeamRecord' => '(' . $awayTeamRecord->wins . ' - ' . $awayTeamRecord->losses . ' - ' . $awayTeamRecord->ot . ')',
