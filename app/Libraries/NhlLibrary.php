@@ -73,8 +73,8 @@ class NhlLibrary
     public function getUpcomingGames($id, $calendar=false)
     {
         $now = new Carbon();
-        $from = $now->copy()->format('Y-m-d');
-        $to = $now->addMonths(12)->copy()->format('Y-m-d');
+        $from = $calendar ? $now->copy()->subMonths(6)->format('Y-m-d') : $now->copy()->format('Y-m-d');
+        $to = $now->addMonths(6)->copy()->format('Y-m-d');
         $uri = 'https://statsapi.web.nhl.com/api/v1/schedule?teamId='. $id .'&startDate='. $from .'&endDate='. $to;
         $games = $this->makeApiCall($uri);
 
@@ -127,16 +127,19 @@ class NhlLibrary
     private function sortScheduledGames($games, $calendar)
     {
         $scheduledGames = array_reduce($games->dates, function ($carry, $gameDay) use ($calendar) {
+            $final = (isset($gameDay->games[0]->status->detailState) && $gameDay->games[0]->status->detailState == 'Final') ? true : false;
             $homeTeamName = $gameDay->games[0]->teams->home->team->name;
             $awayTeamName = $gameDay->games[0]->teams->away->team->name;
             $homeTeamRecord = $gameDay->games[0]->teams->home->leagueRecord;
             $awayTeamRecord = $gameDay->games[0]->teams->away->leagueRecord;
+            $homeTeamScore = $gameDay->games[0]->teams->home->score;
+            $awayTeamScore = $gameDay->games[0]->teams->away->score;
             $gameDate = new Carbon($gameDay->games[0]->gameDate);
 
             if ($calendar) {
                 $carry[] = [
                     'date' => $gameDate->setTimezone('America/Los_Angeles'),
-                    'name' => $this->getCalendarEventNameFromTeams($homeTeamName, $awayTeamName),
+                    'name' => $this->getCalendarEventNameFromTeams($final, $homeTeamName, $awayTeamName, $homeTeamScore, $awayTeamScore),
                     'homeTeamRecord' => '(' . $homeTeamRecord->wins . ' - ' . $homeTeamRecord->losses . ' - ' . $homeTeamRecord->ot . ')',
                     'awayTeamRecord' => '(' . $awayTeamRecord->wins . ' - ' . $awayTeamRecord->losses . ' - ' . $awayTeamRecord->ot . ')',
                 ];
@@ -155,16 +158,23 @@ class NhlLibrary
         return $scheduledGames;
     }
 
-    private function getCalendarEventNameFromTeams($homeTeamName, $awayTeamName)
+    private function getCalendarEventNameFromTeams($final, $homeTeamName, $awayTeamName, $homeTeamScore, $awayTeamScore)
     {
         $homeTeamAbbreviation = $this->parseAbbreviationFromName($homeTeamName);
         $awayTeamAbbreviation = $this->parseAbbreviationFromName($awayTeamName);
 
-        if ($homeTeamAbbreviation == 'VGK') {
-            return $homeTeamAbbreviation . ' VS ' . $awayTeamAbbreviation;
+        $isHome = ($homeTeamAbbreviation == 'VGK');
+        $separator = ($isHome) ? ' VS ' : ' @ ';
+
+        if ($isHome) {
+            $score = ($final) ? " ($homeTeamScore-$awayTeamScore) " : '';
+            $title = $homeTeamAbbreviation . $separator . $awayTeamAbbreviation;
         } else {
-            return $awayTeamAbbreviation . ' @ ' . $homeTeamAbbreviation;
+            $score = ($final) ? " ($awayTeamScore-$homeTeamScore) " : '';
+            $title = $awayTeamAbbreviation . $separator . $homeTeamAbbreviation;
         }
+
+        return $title . $score;
     }
 
     private function parseAbbreviationFromName($name)
