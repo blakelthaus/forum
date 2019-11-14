@@ -83,10 +83,9 @@ class NhlLibrary
 
     public function getStatsSummaryForDisplay($id)
     {
-        $uri = $this->baseUri . $id .'?expand=team.stats';
+        $uri = $this->baseUri . $id .'/stats';
         $stats = $this->makeApiCall($uri);
-
-        $finalStats = $this->sortFinalStatsFromResponse($stats->teams[0]->teamStats[0]->splits);
+        $finalStats = $this->sortFinalStatsFromResponse($stats->stats[0]->splits);
 
         return $finalStats;
     }
@@ -147,7 +146,7 @@ class NhlLibrary
     {
         $stats = [
             'numeric' => $splitStats[0]->stat,
-            'rankings' => $splitStats[1]->stat,
+            'rankings' => isset($splitStats[1]->stat) ? $splitStats[1]->stat : false,
         ];
 
         return $stats;
