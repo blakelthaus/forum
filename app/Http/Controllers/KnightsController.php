@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Libraries\NhlLibrary;
 use Illuminate\Http\Request;
-use MaddHatter\LaravelFullcalendar\Calendar;
-use MaddHatter\LaravelFullcalendar\Event;
 
 class KnightsController extends Controller
 {
@@ -14,11 +12,10 @@ class KnightsController extends Controller
     protected $vgkId;
     protected $eventCalendar;
 
-    public function __construct(NhlLibrary $nhlLibrary, Calendar $eventCalendar)
+    public function __construct(NhlLibrary $nhlLibrary)
     {
         $this->nhlLibrary = $nhlLibrary;
         $this->vgkId = 54;
-        $this->eventCalendar = $eventCalendar;
     }
 
     public function index()

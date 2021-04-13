@@ -123,22 +123,22 @@ class NhlLibrary
 
     private function sortTeamsByDivisionAndPoints($teams)
     {
-        $conferenceNames = $this->getConferenceNames();
+        // $conferenceNames = $this->getConferenceNames();
         $divisionNames = $this->getDivisionNames();
-        $teamsByConference = [];
+        $teamsByDivision = [];
+        // dd($teams, $divisionNames);
         foreach ($teams as $team) {
             $stats = $team->teamStats[0]->splits[0];
-            $teamsByConference[$team->conference->id][$team->division->id][] = $stats;
-            usort($teamsByConference[$team->conference->id][$team->division->id], function($a, $b) {
+            $teamsByDivision[$team->division->id][] = $stats;
+            usort($teamsByDivision[$team->division->id], function($a, $b) {
                 return $a->stat->pts <= $b->stat->pts;
             });
-            ksort($teamsByConference[$team->conference->id]);
-            ksort($teamsByConference);
+            ksort($teamsByDivision[$team->division->id]);
+            ksort($teamsByDivision);
         }
         return [
-            'conferences' => $conferenceNames,
             'divisions' => $divisionNames,
-            'teams' => $teamsByConference
+            'teams' => $teamsByDivision
         ];
     }
 
@@ -295,12 +295,12 @@ class NhlLibrary
 
     private function getDivisionNames()
     {
-        return [
-            18 => 'Metropolitan',
-            17 => 'Atlantic',
-            16 => 'Central',
-            15 => 'Pacific',
-        ];
+        $divisionData = $this->makeApiCall('https://statsapi.web.nhl.com/api/v1/divisions');
+        $divisions = [];
+        foreach($divisionData->divisions as $division) {
+            $divisions[$division->id] = $division->name;
+        }
+        return $divisions;
     }
 
 

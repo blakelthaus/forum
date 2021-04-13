@@ -4,11 +4,10 @@
 
     <div class="md:w-0 lg:w-1/5"></div>
     <div class="flex flex-column md:w-100 lg:w-3/5">
-        @foreach ($standings['teams'] as $key => $conference)
-            <h2 class="text-5xl p-3">{{ $standings['conferences'][$key] }} Conference</h2>
-            @foreach ($conference as $divId => $division)
+    
+        @foreach ($standings['teams'] as $key => $division)
+            <h2 class="text-5xl p-3">{{ $standings['divisions'][$key] }} Division</h2>
                 <div class="p-2">
-                    <h3 class="text-3xl p-3">{{ $standings['divisions'][$divId] }} Division</h3>
                     <table class="table table-hover">
                         <thead class="thead-dark">
                             <tr>
@@ -36,7 +35,6 @@
                         </tbody>
                     </table>
                 </div>
-            @endforeach
         @endforeach
     </div>
     <div class="md:w-0 lg:w-1/5"></div>

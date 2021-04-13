@@ -67,4 +67,3 @@ Route::group(['prefix' => 'forum'], function() {
 
 
 
-

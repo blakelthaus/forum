@@ -3,7 +3,7 @@
     <ul>
         <li>Location: {{ $team->locationName }}</li>
         <li>First Year of Play: {{ $team->firstYearOfPlay }}</li>
-        <li>Division: {{ $team->division->name }} ({{ $team->division->nameShort }})</li>
+        <li>Division: {{ $team->division->name }} ({{ $team->division->name }})</li>
         <li>Conference: {{ $team->conference->name }}</li>
         <li>Franchise: {{ $team->franchise->teamName }}</li>
         <li>Website Url: <a href="{{ $team->officialSiteUrl }}">{{ $team->officialSiteUrl }}</a></li>
