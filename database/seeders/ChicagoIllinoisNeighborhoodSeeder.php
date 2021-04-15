@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Grimzy\LaravelMysqlSpatial\Types\MultiPolygon;
 
 class ChicagoIllinoisNeighborhoodSeeder extends BaseNeighborhoodSeeder

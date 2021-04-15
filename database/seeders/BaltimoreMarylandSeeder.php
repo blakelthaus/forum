@@ -1,34 +1,35 @@
 <?php
 
-use Grimzy\LaravelMysqlSpatial\Types\MultiPolygon;
-use Grimzy\LaravelMysqlSpatial\Types\Polygon;
+namespace Database\Seeders;
 
-class EastBatonRougeParishSeeder extends BaseNeighborhoodSeeder
+use Grimzy\LaravelMysqlSpatial\Types\MultiPolygon;
+
+class BaltimoreMarylandSeeder extends BaseNeighborhoodSeeder
 {
     /**
      * Index of the name column.
      */
-    const COLUMN_INDEX_NAME = 2;
+    const COLUMN_INDEX_NAME = 3;
 
     /**
      * Index of the geometry column.
      */
-    const COLUMN_INDEX_GEOMETRY = 1;
+    const COLUMN_INDEX_GEOMETRY = 0;
 
     /**
      * Name of the neighborhoods' city.
      */
-    const CITY = 'Baton Rouge';
+    const CITY = 'Baltimore';
 
     /**
      * Name of the neighborhoods' state.
      */
-    const STATE = 'LA';
+    const STATE = 'MD';
 
     /**
      * Path of the seed file relative to the `database` directory.
      */
-    const DATABASE_FILE_PATH = 'seeds/flat-files/east-baton-rouge-parish-louisiana.csv';
+    const DATABASE_FILE_PATH = 'seeds/flat-files/baltimore-maryland.csv';
 
     /**
      * If the file has a header row.
@@ -38,7 +39,7 @@ class EastBatonRougeParishSeeder extends BaseNeighborhoodSeeder
     /**
      * If the neighborhood names should be converted to Title Case.
      */
-    const USE_TITLE_CASE = true;
+    const USE_TITLE_CASE = false;
 
     /**
      * Run the database seeds.
@@ -68,10 +69,6 @@ class EastBatonRougeParishSeeder extends BaseNeighborhoodSeeder
      */
     protected function parseGeometryToMultiPolygon($geometry): MultiPolygon
     {
-        // parse the well-known text into a polygon
-        $polygon = Polygon::fromWKT($geometry);
-
-        // return a multipolygon containing the polygon
-        return new MultiPolygon([$polygon]);
+        return MultiPolygon::fromWKT($geometry);
     }
 }

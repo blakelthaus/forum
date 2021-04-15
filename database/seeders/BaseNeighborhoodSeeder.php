@@ -1,5 +1,8 @@
 <?php
 
+namespace Database\Seeders;
+
+
     use App\Models\Neighborhood;
     use Grimzy\LaravelMysqlSpatial\Types\MultiPolygon;
     use Illuminate\Database\Seeder;
