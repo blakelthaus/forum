@@ -11,6 +11,11 @@ class BlakeController extends Controller
         return view('blake.index');
     }
 
+    public function new()
+    {
+        return view('blake.newindex');
+    }
+
     public function contact()
     {
         return view('blake.contact');

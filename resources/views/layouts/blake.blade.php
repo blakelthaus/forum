@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="/build/tailwind.css">
 
     <!-- Scripts -->
-    <script src="{{ env('APP_URL', 'https://blakeborgholthaus.com') }}/js/app.js" defer></script>
-    <script src="{{ env('APP_URL', 'https://blakeborgholthaus.com') }}/js/tire.js" defer></script>
+    <script src="{{ env('APP_URL') }}/js/app.js" defer></script>
+    <script src="{{ env('APP_URL') }}/js/tire.js" defer></script>
 
     <style>
         body {

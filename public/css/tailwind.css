@@ -1,11 +1,15 @@
+/* after updating this file you need to run the build comand below for the changes to take effect on the site */
+/* npx tailwindcss-cli build public/css/tailwind.css -o public/build/tailwind.css */
+
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
 .btn {
     @apply inline-block  px-5 py-3 rounded-lg text-sm  uppercase tracking-wider font-semibold
 }
 .btn:focus {
-    @apply outline-none shadow-outline;
+    @apply outline-none ring;
 }
 
 .btn-green {
@@ -43,7 +47,7 @@
 }
 
 .form-input:focus {
-    @apply outline-none shadow-outline
+    @apply outline-none ring
 }
 
 
