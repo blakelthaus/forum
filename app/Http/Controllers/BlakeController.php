@@ -43,7 +43,7 @@ class BlakeController extends Controller
             [
                 'skill' => 'SQL (MySQL, Oracle, Sequel)',
                 'experience' => '4 Years',
-                'img' => 'https://brandslogos.com/wp-content/uploads/images/large/mysql-logo-1.png',
+                'img' => 'https://cdn.iconscout.com/icon/free/png-256/mysql-21-1174941.png',
                 'link' => 'https://www.mysql.com/'
             ],
             [
