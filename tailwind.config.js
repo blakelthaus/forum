@@ -1,10 +1,11 @@
 module.exports = {
+  purge: [],
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
-    extend: {}
+    extend: {},
   },
   variants: {
-    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
-    tableLayout: ['responsive', 'hover', 'focus'],
+    extend: {},
   },
-  plugins: []
+  plugins: [],
 }
