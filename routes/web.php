@@ -14,7 +14,7 @@
 Route::get('/', 'BlakeController@index');
 Route::get('/contact', 'BlakeController@contact');
 Route::get('/resume', 'BlakeController@resume');
-Route::get('/new', 'BlakeController@new');
+Route::get('/old', 'BlakeController@old');
 
 Route::get('/tailwind', 'Tailwind@index');
 

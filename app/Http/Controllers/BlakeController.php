@@ -8,15 +8,15 @@ class BlakeController extends Controller
 {
     public function index()
     {
-        return view('blake.index');
-    }
-
-    public function new()
-    {
         $sites = $this->getSites();
         $colors = $this->getRandomColors();
         $skills = $this->getSkills();
-        return view('blake.newindex', ['sites' => $sites, 'colors' => $colors, 'skills' => $skills]);
+        return view('blake.index', ['sites' => $sites, 'colors' => $colors, 'skills' => $skills]);
+    }
+
+    public function old()
+    {
+        return view('oldindex.blade.php');
     }
 
     public function contact()
