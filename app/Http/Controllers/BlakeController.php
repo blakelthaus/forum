@@ -16,7 +16,7 @@ class BlakeController extends Controller
 
     public function old()
     {
-        return view('oldindex.blade.php');
+        return view('blake.oldindex');
     }
 
     public function contact()
