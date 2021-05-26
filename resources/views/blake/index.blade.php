@@ -14,7 +14,7 @@
                                 <img alt="{{ $site['title'] }}" class="block h-auto w-full" src="{{ $site['img'] }}">
                             </a>
                             <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                                <h1 class="text-lg">
+                                <h1 class="text-md font-semibold max-w-full">
                                     <a class="no-underline hover:underline text-black dark:text-white dark:hover:text-gray-300" href="https://vegasgoesgold.com">
                                         {{ $site['title'] }}
                                     </a>
