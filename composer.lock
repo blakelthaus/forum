@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a17abe1b769e963944c0bd27b8ca65e7",
+    "content-hash": "6f3a0d7237b38c709591982dcc23538f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -183,6 +183,57 @@
                 }
             ],
             "time": "2020-10-02T12:38:20+00:00"
+        },
+        {
+            "name": "codetoad/strava",
+            "version": "1.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RichieMcMullen/laravel-strava.git",
+                "reference": "9a60c7fc35da472f94cc41e4df0af88184776102"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RichieMcMullen/laravel-strava/zipball/9a60c7fc35da472f94cc41e4df0af88184776102",
+                "reference": "9a60c7fc35da472f94cc41e4df0af88184776102",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3|^7.0.1",
+                "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CodeToad\\Strava\\StravaServiceProvider"
+                    ],
+                    "aliases": {
+                        "Strava": "CodeToad\\Strava\\StravaFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CodeToad\\Strava\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Richie McMullen",
+                    "email": "richiemcmullen007@gmail.com"
+                }
+            ],
+            "description": "A laravel package to access data from the Strava API.",
+            "support": {
+                "issues": "https://github.com/RichieMcMullen/laravel-strava/issues",
+                "source": "https://github.com/RichieMcMullen/laravel-strava/tree/1.0.11"
+            },
+            "time": "2021-02-21T11:25:23+00:00"
         },
         {
             "name": "doctrine/cache",
