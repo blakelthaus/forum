@@ -31,6 +31,12 @@ Route::group(['prefix' => 'vgk'], function() {
     Route::get('/rankings', 'KnightsController@standings')->name('vgk.standings');
 });
 
+Route::group(['prefix' => 'strava'], function() {
+    Route::get('/', 'StravaController@index')->name('strava.index');
+    Route::get('/profile', 'StravaController@profile')->name('strava.profile');
+    Route::get('/profile/{athleteid}', 'StravaController@athleteProfile')->name('strava.athlete');
+});
+
 Route::group(['prefix' => 'forum'], function() {
     Route::get('/', function () {
         return view('welcome');

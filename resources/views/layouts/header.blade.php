@@ -40,15 +40,12 @@
                     </div>
                     <div class="w-full hidden flex-grow lg:pb-5 lg:flex lg:items-center lg:w-auto" id="mobile-nav">
                     <div class="text-sm lg:flex-grow">
-                        <a href="" class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-600 mr-4 lg:ml-4 dark:text-white">
+                        {{-- <a href="" class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-600 mr-4 lg:ml-4 dark:text-white">
                         Sites
                         </a>
                         <a href="" class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-600 mr-4 dark:text-white">
                         Skills
-                        </a>
-                        <a href="" class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-600 dark:text-white">
-                        Social
-                        </a>
+                        </a> --}}
                     </div>
                     <div>
                         <a href="#" id="color-mode" class=" inline-block text-sm px-4 py-2 shadow-md leading-none border rounded text-black border-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:border-transparent hover:text-white hover:bg-black mt-4 lg:mt-0 dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black">Dark Mode</a>
@@ -58,8 +55,11 @@
             </div>
         </div>
         @yield('content')
-    
+        <div id="footer" class="bg-gray-200 p-6 dark:bg-gray-900 flex justify-items-center">
+            <p class="dark:text-white">Website built by Blake Borgholthaus using Laravel and TailWindCSS</p>
+        </div>
     </div>
+    
 
     <style>
         .active{
