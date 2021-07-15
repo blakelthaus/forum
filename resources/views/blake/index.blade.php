@@ -2,7 +2,7 @@
 
 @section('content')
         {{-- body content of homepage --}}
-        <div class="container my-12 mx-auto px-4 md:px-12 h-screen" id="sites">
+        <div class="container my-12 mx-auto px-4 md:px-12 h-auto" id="sites">
             <h2 class="text-4xl dark:text-white">Websites</h2>
             <div class="flex flex-wrap -mx-1 lg:-mx-4">
             @foreach($sites as $key => $site)
@@ -31,7 +31,7 @@
             @endforeach
             </div>
         </div>
-        <div class="container my-12 mx-auto px-4 md:px-12" id="skills">
+        <div class="container my-12 mx-auto px-4 md:px-12 h-auto" id="skills">
             <h2 class="text-4xl dark:text-white">Skills</h2>
             <div class="flex flex-wrap -mx-1 lg:-mx-4 p-4">
                 @foreach($skills as $key => $skill)
